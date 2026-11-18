@@ -1,75 +1,104 @@
-# React + TypeScript + Vite
+# Customer Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customer management application built with **React, TypeScript, and Vite**. This project demonstrates component-based architecture, state management, asynchronous data fetching, and automated testing.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Customer Management:** Display and manage a list of customers.
+- **Search:** Search customers by name, family name, email, and phone number.
+- **Filtering:** Filter customers by active and inactive status.
+- **Sorting:** Sort customers alphabetically (A–Z / Z–A).
+- **Status Management:** Toggle customer status.
+- **Delete Customers:** Delete inactive customers with a confirmation dialog.
+- **Customer Details:** Expand and collapse additional customer information.
+- **Async Data Fetching:** Simulate API requests with loading and error states.
+- **Automated Testing:** Test application behavior and user interactions.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- CSS
+- Vitest
+- React Testing Library
+- @testing-library/user-event
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js
+- npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository:
 
+```bash
+git clone https://github.com/elnaz-shojaei/react-customer-management.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd react-customer-management
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+### Run the Development Server
+
+```bash
+npm run dev
+```
+
+### Run Tests
+
+```bash
+npm run test
+```
+
+## Project Structure
+
+```text
+src/
+├── services/
+│   └── customer.service.ts
+├── test/
+│   └── setup.ts
+├── type/
+│   └── customer.ts
+├── utils/
+│   ├── customer.utils.ts
+│   └── customerUtils.test.ts
+├── App.tsx
+├── App.test.tsx
+├── CustomerCard.tsx
+└── CustomerCard.test.tsx
+```
+
+## Testing
+
+The project uses Vitest and React Testing Library to verify application behavior, including:
+
+- Customer search and filtering
+- Sorting
+- Customer status changes
+- Delete confirmation and cancellation
+- Loading and error states
+- User interactions
+
+## Purpose
+
+This project is part of my hands-on React and TypeScript learning journey, focusing on writing maintainable code, understanding React fundamentals, and building reliable applications through automated testing.
+
+## Author
+
+**Elnaz Shojaei**
+
+[GitHub](https://github.com/elnaz-shojaei)
